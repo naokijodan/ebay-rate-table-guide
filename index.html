@@ -58,6 +58,10 @@ p{margin:.6rem 0}
   .flow{flex-direction:column}
   .flow .arr{transform:rotate(90deg);align-self:center}
 }
+.shot{margin:.9rem 0 .2rem}
+.shot a{display:block;font-weight:400}
+.shot img{display:block;width:100%;height:auto;border:2px solid var(--line);border-radius:10px;background:#fff}
+.shot figcaption{font-size:.9rem;color:var(--ink-2);margin-top:.35rem}
 ul{padding-left:1.2em;margin:.4rem 0}
 li{margin:.3rem 0}
 a{color:var(--accent);font-weight:700}
@@ -105,64 +109,89 @@ footer{margin-top:2rem;color:var(--ink-2);font-size:.9rem;text-align:center}
 </div>
 
 <div class="part">手順</div>
+<div class="card info"><p>この手順の画面は、<b>イスラエル宛て</b>に設定したときの例です。ニュージーランドの場合は、国の選び方だけが変わります（手順4を見てください）。赤い枠は、押す場所です。</p></div>
 
 <section class="step">
   <span class="num">1</span>
-  <h2>レートテーブルの編集画面を開く</h2>
-  <p>次の順に進みます。</p>
-  <p><span class="menu">Account Settings</span> → <span class="menu">Shipping Preferences</span> → <span class="menu">Rate and exclusions</span></p>
-  <p>そこにある「Use shipping rate table」の横の <span class="menu">Edit</span> をおします。</p>
+  <h2>Account Settings で Shipping Preferences を開く</h2>
+  <p><span class="menu">Account Settings</span> を開き、<span class="menu">Selling</span> の欄にある <span class="menu">Shipping Preferences</span> をおします。</p>
+  <figure class="shot"><a href="img/step1.png" target="_blank" rel="noopener"><img src="img/step1.png" alt="Account Settings の Selling 欄で Shipping Preferences を押す" loading="lazy"></a><figcaption>Selling の欄の「Shipping Preferences」をおします（クリックで大きく開きます）</figcaption></figure>
 </section>
 
 <section class="step">
   <span class="num">2</span>
-  <h2>新しいテーブルを作る</h2>
-  <p><span class="menu">Shipping rate by item</span> の <span class="menu">Create new</span> をおして、<span class="menu">International rate table</span> を選びます。</p>
-  <p>テーブルに、わかりやすい名前を付けます。</p>
+  <h2>「Use shipping rate tables」の Edit をおす</h2>
+  <p>開いた画面の <span class="menu">Rates and exclusions</span> の中に、<span class="menu">Use shipping rate tables</span> の行があります。右の <span class="menu">Edit</span> をおします。</p>
+  <figure class="shot"><a href="img/step2.png" target="_blank" rel="noopener"><img src="img/step2.png" alt="Rates and exclusions の Use shipping rate tables と Edit" loading="lazy"></a><figcaption>「Use shipping rate tables」の行の右にある「Edit」（クリックで大きく開きます）</figcaption></figure>
 </section>
 
 <section class="step">
   <span class="num">3</span>
-  <h2>配送の区分を選び、国を割り当てる</h2>
-  <p>配送の区分は <span class="menu">Expedited</span> / <span class="menu">Standard</span> / <span class="menu">Economy</span> の3つです。このうち、<b>自分が使っているもの</b>を選びます。</p>
-  <p>次に、地域の中から国を選んで割り当て、<span class="menu">Save</span> をおします。</p>
-  <div class="card kraft">
-    <p>説明動画の例：クーリエ（xp）のポリシー用に Expedited を選び、Middle East の中の Israel を割り当てています。</p>
-    <p>ニュージーランドなら、<b>Oceania の中の New Zealand</b> を割り当てます。</p>
-    <p>エコノミー系のポリシーで Economy を選ぶかどうかは、ご自身のポリシーの配送方法に合わせてください。</p>
-  </div>
+  <h2>新しいテーブルを作る（Shipping rate tables 画面）</h2>
+  <p><span class="menu">Shipping rate tables</span> の画面が開きます。次のとおりに選びます。</p>
+  <ul>
+    <li><span class="menu">Set shipping rate by</span> は <span class="menu">Item</span></li>
+    <li><span class="menu">Create new</span> は <span class="menu">International rate table</span></li>
+    <li><span class="menu">Rate table title</span> に、わかりやすい名前を入れます。</li>
+  </ul>
+  <figure class="shot"><a href="img/step3.png" target="_blank" rel="noopener"><img src="img/step3.png" alt="Shipping rate tables 画面。Set shipping rate by は Item、Create new は International rate table、Rate table title の欄" loading="lazy"></a><figcaption>Create new と Rate table title の欄（クリックで大きく開きます）</figcaption></figure>
 </section>
 
 <section class="step">
   <span class="num">4</span>
-  <h2>配送サービスを選んで、送料を入れる</h2>
-  <p>配送サービスを選びます（動画では <span class="menu">eBay SpeedPAK Expedited</span> です）。</p>
-  <p>送料を入れて、<span class="menu">Save</span> をおします。</p>
-  <div class="card kraft"><p>動画では「コストは差額だけでいい」と説明しています。</p></div>
+  <h2>配送の区分ごとに、国を選ぶ</h2>
+  <p>下に <span class="menu">Expedited</span> / <span class="menu">Standard</span> / <span class="menu">Economy</span> の3つの欄があります。このうち、<b>自分が使っているもの</b>の <span class="menu">Add regions / states</span> をおして、地域の一覧から国を選びます。</p>
+  <div class="card kraft">
+    <p>説明動画の例：クーリエ（xp）のポリシー用に Expedited を選び、<b>Middle East</b> の中の <b>Israel</b> を選んでいます。</p>
+    <p>ニュージーランドなら、一覧の <b>Oceania</b> を開いて、その中の <b>New Zealand</b> を選びます。</p>
+    <p>エコノミー系のポリシーで Economy を選ぶかどうかは、ご自身のポリシーの配送方法に合わせてください。</p>
+  </div>
+  <figure class="shot"><a href="img/step4.png" target="_blank" rel="noopener"><img src="img/step4.png" alt="地域を選ぶ画面。Africa から Southeast Asia までの一覧" loading="lazy"></a><figcaption>地域の一覧（Oceania の行も、ここにあります）（クリックで大きく開きます）</figcaption></figure>
 </section>
 
 <section class="step">
   <span class="num">5</span>
-  <h2>シッピングポリシーに、作ったテーブルを割り当てる</h2>
-  <p><span class="menu">Business policies</span> で、対象のシッピングポリシーを開きます。</p>
-  <p>「Rate table」の欄に、作ったテーブルを割り当てて、<span class="menu">Save</span> をおします。</p>
-  <div class="card kraft"><p>狙ったポリシーだけでもかまいません。</p></div>
+  <h2>配送サービスと送料を入れて、Save をおす</h2>
+  <p><span class="menu">Select shipping service</span>（任意）でサービスを選びます（動画では <span class="menu">eBay SpeedPAK Expedited</span> です）。</p>
+  <p><span class="menu">Cost</span> に送料の金額を入れて、<span class="menu">Save</span> をおします。</p>
+  <div class="card kraft"><p>動画では「コストは差額だけでいい」と説明しています。</p></div>
+  <div class="card warn"><p>Save の上に、画面でこう表示されます。<br>「On save, these changes will be applied to all new and existing listings associated with this rate table.」<br>（保存すると、このテーブルを使う新しい出品と既存の出品に、変更が適用されます）</p></div>
+  <figure class="shot"><a href="img/step5.png" target="_blank" rel="noopener"><img src="img/step5.png" alt="Expedited の行に Middle East - Israel、eBay SpeedPAK Expedited、$20.00。下に Save" loading="lazy"></a><figcaption>サービスと送料を入れたところ。下の「Save」をおします（クリックで大きく開きます）</figcaption></figure>
 </section>
 
 <section class="step">
   <span class="num">6</span>
-  <h2>出品を更新する</h2>
-  <p>そのポリシーを使っている出品を開きます（ポリシー画面の <span class="menu">See listing</span> などから開けます）。</p>
-  <p><span class="menu">Edit</span> をおして、何も変えずにそのまま <span class="menu">Submit</span> をおします。</p>
-  <div class="card kraft"><p>対象の出品だけでもかまいません。</p></div>
-  <div class="card warn"><p>レートテーブルは、出品を更新（Revise）しないと反映されません（社内で実際に測った結果です）。</p></div>
+  <h2>シッピングポリシーに、作ったテーブルを選ぶ</h2>
+  <p><span class="menu">Business policies</span> で、対象のシッピングポリシーを開いて編集します（<span class="menu">Edit shipping policy</span>）。</p>
+  <p>国際配送の下にある <span class="menu">Rate table (optional)</span> で、作ったテーブルを選んで、<span class="menu">Save</span> をおします。</p>
+  <div class="card kraft"><p>狙ったポリシーだけでもかまいません。</p></div>
+  <figure class="shot"><a href="img/step6.png" target="_blank" rel="noopener"><img src="img/step6.png" alt="Edit shipping policy 画面の Rate table (optional) に作ったテーブルを選んだところ" loading="lazy"></a><figcaption>「Rate table (optional)」に作ったテーブルを選びます（クリックで大きく開きます）</figcaption></figure>
 </section>
 
 <section class="step">
   <span class="num">7</span>
+  <h2>出品を更新する（その1）出品一覧で Edit をおす</h2>
+  <p>Seller Hub の <span class="menu">Manage active listings</span>（出品一覧）で、そのポリシーを使っている出品だけを表示します。</p>
+  <p><span class="menu">Edit</span> をおして、<span class="menu">Edit selected</span> か <span class="menu">Edit all ○○ listings</span>（○○は件数）を選びます。</p>
+  <div class="card kraft"><p>対象の出品だけでもかまいません。その場合は、出品にチェックを入れて <span class="menu">Edit selected</span> を選びます。</p></div>
+  <figure class="shot"><a href="img/step7.png" target="_blank" rel="noopener"><img src="img/step7.png" alt="Manage active listings で Edit をおし、Edit selected と Edit all を選ぶところ" loading="lazy"></a><figcaption>「Edit」→「Edit selected」か「Edit all ○○ listings」（クリックで大きく開きます）</figcaption></figure>
+</section>
+
+<section class="step">
+  <span class="num">8</span>
+  <h2>出品を更新する（その2）Submit をおす</h2>
+  <p><span class="menu">Revise listings</span> の画面になります。何も変えずに、画面下の <span class="menu">Submit</span> をおします。</p>
+  <p><span class="menu">Review fees</span> が出たら、もう一度 <span class="menu">Submit</span> をおします。</p>
+  <div class="card warn"><p>レートテーブルは、出品を更新（Revise）しないと反映されません（社内で実際に測った結果です）。</p></div>
+  <figure class="shot"><a href="img/step8.png" target="_blank" rel="noopener"><img src="img/step8.png" alt="Revise listings 画面の Review fees と Submit" loading="lazy"></a><figcaption>「Review fees」で「Submit」をおします（クリックで大きく開きます）</figcaption></figure>
+</section>
+
+<section class="step">
+  <span class="num">9</span>
   <h2>販売ページで確かめる</h2>
-  <p>販売ページを開き、配送先を「ニュージーランド」にします。</p>
-  <p>送料が出れば、できあがりです。</p>
+  <p>販売ページを開き、送料や配送先の欄（<span class="menu">Shipping, returns, and payments</span>）で、<span class="menu">Delivery to</span> の国を選びます（例：イスラエル）。</p>
+  <p>送料が出れば、できあがりです。ニュージーランドなら、国に「New Zealand」を選んで確かめます。</p>
+  <figure class="shot"><a href="img/check.png" target="_blank" rel="noopener"><img src="img/check.png" alt="商品ページの Shipping, returns, and payments で Delivery to が Israel、eBay SpeedPAK Expedited US $20.00 と出ている" loading="lazy"></a><figcaption>Delivery to に国を選ぶと、送料が出ます（クリックで大きく開きます）</figcaption></figure>
 </section>
 
 <div class="part">注意すること</div>
