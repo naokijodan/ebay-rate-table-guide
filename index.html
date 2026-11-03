@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ポリシーの送り先にない国（例：ニュージーランド）へ送れるようにする方法を、レートテーブル（国別の送料表）で設定する手順としてやさしく説明します。">
+<title>ポリシーの送り先にない国へ送れるようにする方法（レートテーブル）</title>
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#FAF9F6; --surface:#FFFFFF; --ink:#22272E; --ink-2:#5A6472;
+  --line:#E3E1DA; --accent:#2C55A6; --accent-soft:#EBF0FA; --on-accent:#fff;
+  --kraft:#8A6A3B; --kraft-soft:#F5EFE3;
+  --ok:#2E7D4F; --ok-soft:#E8F3EC;
+  --warn:#9A6A0A; --warn-soft:#FBF3DF;
+  --bad:#A63D3D; --bad-soft:#F6E4E2;
+  --unknown-soft:#EEEFF1;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#171A1F; --surface:#1F242B; --ink:#E8EAED; --ink-2:#9AA4B0;
+    --line:#343B44; --accent:#7FA3E8; --accent-soft:#243248; --on-accent:#10151C;
+    --kraft:#C9A76A; --kraft-soft:#2E2820;
+    --ok:#7CC49A; --ok-soft:#20312A;
+    --warn:#D9B36A; --warn-soft:#332C1D;
+    --bad:#E58A87; --bad-soft:#3A2020;
+    --unknown-soft:#2A2E34;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Yu Gothic","Noto Sans JP",sans-serif;
+  font-size:18px;line-height:1.8;overflow-wrap:anywhere}
+main{max-width:58rem;margin:0 auto;padding:1.5rem 16px 3rem}
+h1{font-size:1.6rem;line-height:1.5;margin:0 0 .4rem}
+h2{font-size:1.3rem;line-height:1.5;margin:0 0 .6rem}
+.part{font-size:1.25rem;font-weight:700;margin:2.4rem 0 .8rem;padding:.5rem .9rem;border-left:8px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0}
+p{margin:.6rem 0}
+.sub{color:var(--ink-2);margin:0}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.25rem 1.4rem;margin:1rem 0}
+.num{display:inline-flex;align-items:center;justify-content:center;width:3.2rem;height:3.2rem;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:1.8rem;font-weight:700;line-height:1;margin-bottom:.5rem}
+.card{border-radius:12px;padding:.9rem 1.1rem;margin:.75rem 0;border:1px solid var(--line);background:var(--surface)}
+.card.info{background:var(--accent-soft);border-color:var(--accent)}
+.card.ok{background:var(--ok-soft);border-color:var(--ok)}
+.card.warn{background:var(--warn-soft);border-color:var(--warn)}
+.card.kraft{background:var(--kraft-soft);border-color:var(--kraft)}
+.card p:first-child{margin-top:0}.card p:last-child{margin-bottom:0}
+.menu{display:inline-block;font-weight:700;background:var(--unknown-soft);border:1px solid var(--line);border-radius:8px;padding:.1rem .6rem;margin:.1rem 0}
+.flow{display:flex;align-items:stretch;gap:.6rem;margin:1rem 0}
+.flow .box{flex:1;border-radius:12px;padding:.8rem 1rem;border:2px solid var(--line);background:var(--surface)}
+.flow .box b{display:block;margin-bottom:.2rem}
+.flow .b1{border-color:var(--bad);background:var(--bad-soft)}
+.flow .b2{border-color:var(--warn);background:var(--warn-soft)}
+.flow .b3{border-color:var(--ok);background:var(--ok-soft)}
+.flow .arr{align-self:center;font-size:1.8rem;color:var(--ink-2);font-weight:700}
+@media (max-width:640px){
+  .flow{flex-direction:column}
+  .flow .arr{transform:rotate(90deg);align-self:center}
+}
+ul{padding-left:1.2em;margin:.4rem 0}
+li{margin:.3rem 0}
+a{color:var(--accent);font-weight:700}
+a:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+footer{margin-top:2rem;color:var(--ink-2);font-size:.9rem;text-align:center}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>ポリシーの送り先にない国へ送れるようにする方法（レートテーブル）｜例：ニュージーランド</h1>
+  <p class="sub">レートテーブル（国別の送料表）を使います。1つずつ順番にやれば大丈夫です。</p>
+</header>
+
+<div class="card warn">
+  <p><b>こんな症状のとき</b></p>
+  <ul>
+    <li>買う人が配送先に「ニュージーランド」を選ぶと、送料が出ません。</li>
+    <li>「配送方法は出品者にお問い合わせください（Contact seller）」と出て、買えません。</li>
+    <li>でも、ニュージーランドは除外国には入っていません。</li>
+  </ul>
+</div>
+
+<div class="part">症状・原因・対処の流れ</div>
+<div class="flow" role="group" aria-label="症状から原因、対処への流れ">
+  <div class="box b1"><b>症状</b>ニュージーランドで送料が出ず、買えない</div>
+  <div class="arr" aria-hidden="true">→</div>
+  <div class="box b2"><b>原因</b>ポリシーの送り先から、ニュージーランドだけが外れていた</div>
+  <div class="arr" aria-hidden="true">→</div>
+  <div class="box b3"><b>対処</b>レートテーブルで、その国の送料を設定する</div>
+</div>
+
+<div class="part">なぜ起きたのか（原因）</div>
+<div class="card info">
+  <p>2026年10月21日に、シッピングポリシーを変更しました。これは、eBaymag（マグ）で同期すると、ヨーロッパ向けの追加送料が$0になってしまう問題への対応です。</p>
+  <p>このとき、国際配送の送り先を「Worldwide」から、「Americas・Asia・オーストラリア・メキシコ」などの指定に置き換えました。</p>
+  <p>ところが、シッピングポリシーでは「Oceania（オセアニア）」もニュージーランドも、送り先に指定できません（eBayが受け付けません）。そのため、ニュージーランドだけが送り先から外れてしまいました。</p>
+</div>
+
+<div class="part">対処の方法</div>
+<div class="card ok">
+  <p><b>シッピングポリシーを変えても、直りません。</b></p>
+  <p>代わりに、<b>レートテーブル（国別の送料表）</b>で設定します。</p>
+  <p>この方法は、実際にイスラエル宛てで確かめ済みです。</p>
+</div>
+
+<div class="part">手順</div>
+
+<section class="step">
+  <span class="num">1</span>
+  <h2>レートテーブルの編集画面を開く</h2>
+  <p>次の順に進みます。</p>
+  <p><span class="menu">Account Settings</span> → <span class="menu">Shipping Preferences</span> → <span class="menu">Rate and exclusions</span></p>
+  <p>そこにある「Use shipping rate table」の横の <span class="menu">Edit</span> をおします。</p>
+</section>
+
+<section class="step">
+  <span class="num">2</span>
+  <h2>新しいテーブルを作る</h2>
+  <p><span class="menu">Shipping rate by item</span> の <span class="menu">Create new</span> をおして、<span class="menu">International rate table</span> を選びます。</p>
+  <p>テーブルに、わかりやすい名前を付けます。</p>
+</section>
+
+<section class="step">
+  <span class="num">3</span>
+  <h2>配送の区分を選び、国を割り当てる</h2>
+  <p>配送の区分は <span class="menu">Expedited</span> / <span class="menu">Standard</span> / <span class="menu">Economy</span> の3つです。このうち、<b>自分が使っているもの</b>を選びます。</p>
+  <p>次に、地域の中から国を選んで割り当て、<span class="menu">Save</span> をおします。</p>
+  <div class="card kraft">
+    <p>説明動画の例：クーリエ（xp）のポリシー用に Expedited を選び、Middle East の中の Israel を割り当てています。</p>
+    <p>ニュージーランドなら、<b>Oceania の中の New Zealand</b> を割り当てます。</p>
+    <p>エコノミー系のポリシーで Economy を選ぶかどうかは、ご自身のポリシーの配送方法に合わせてください。</p>
+  </div>
+</section>
+
+<section class="step">
+  <span class="num">4</span>
+  <h2>配送サービスを選んで、送料を入れる</h2>
+  <p>配送サービスを選びます（動画では <span class="menu">eBay SpeedPAK Expedited</span> です）。</p>
+  <p>送料を入れて、<span class="menu">Save</span> をおします。</p>
+  <div class="card kraft"><p>動画では「コストは差額だけでいい」と説明しています。</p></div>
+</section>
+
+<section class="step">
+  <span class="num">5</span>
+  <h2>シッピングポリシーに、作ったテーブルを割り当てる</h2>
+  <p><span class="menu">Business policies</span> で、対象のシッピングポリシーを開きます。</p>
+  <p>「Rate table」の欄に、作ったテーブルを割り当てて、<span class="menu">Save</span> をおします。</p>
+  <div class="card kraft"><p>狙ったポリシーだけでもかまいません。</p></div>
+</section>
+
+<section class="step">
+  <span class="num">6</span>
+  <h2>出品を更新する</h2>
+  <p>そのポリシーを使っている出品を開きます（ポリシー画面の <span class="menu">See listing</span> などから開けます）。</p>
+  <p><span class="menu">Edit</span> をおして、何も変えずにそのまま <span class="menu">Submit</span> をおします。</p>
+  <div class="card kraft"><p>対象の出品だけでもかまいません。</p></div>
+  <div class="card warn"><p>レートテーブルは、出品を更新（Revise）しないと反映されません（社内で実際に測った結果です）。</p></div>
+</section>
+
+<section class="step">
+  <span class="num">7</span>
+  <h2>販売ページで確かめる</h2>
+  <p>販売ページを開き、配送先を「ニュージーランド」にします。</p>
+  <p>送料が出れば、できあがりです。</p>
+</section>
+
+<div class="part">注意すること</div>
+<div class="card warn">
+  <ul>
+    <li>レートテーブルは、<b>アカウントごとに作ります</b>。EAGLEの同期では配られません。</li>
+    <li>送りたくない国は、今までどおり<b>除外（exclusion）</b>で止めます。レートテーブルは、除外を上書きしません。</li>
+    <li>公式ヘルプには、次のことが書かれています。
+      <ul>
+        <li>作ったあとで、テーブルの種類は変えられません。</li>
+        <li>無料にしたいときは、空欄ではなく <b>$0</b> を入れます。</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="part">説明動画と公式ヘルプ</div>
+<div class="card info">
+  <p>説明動画（イスラエル宛てに送料を上乗せする例）：<br><a href="https://vimeo.com/1232747141/f3733d0dfa?share=copy&amp;fl=sv&amp;fe=ci" target="_blank" rel="noopener">Vimeo の説明動画を見る</a></p>
+  <p>公式ヘルプ（eBay）：<br><a href="https://www.ebay.com/help/selling/shipping-items/using-shipping-rate-tables?id=5459" target="_blank" rel="noopener">Using shipping rate tables</a></p>
+</div>
+
+<footer>おわり</footer>
+</main>
+</body>
+</html>
